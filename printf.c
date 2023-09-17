@@ -9,9 +9,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int i, acs = 0, cur;
-	char *str;
-	int count = 0;
+	int i, acs = 0, count = 0;
 	va_list params;
 
 	if (format == NULL)
@@ -33,6 +31,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			count += print_acs(format[i], format[i - 1], params);
+			/*
 			switch (format[i])
 			{
 			case 'c':
@@ -80,6 +80,7 @@ int _printf(const char *format, ...)
 				count += 2;
 				break;
 			}
+			*/
 			acs = 0;
 		}
 	}

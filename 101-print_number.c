@@ -10,13 +10,13 @@
 
 int print_number(int n)
 {
-	unsigned int i = n, pow;
+	int pow;
 	int count;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		i = -i;
+		n *= -1;
 	}
 
 	pow = 1000000000;

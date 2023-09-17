@@ -7,5 +7,6 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int _puts(char *str);
 int print_number(int n);
+int print_acs(char format, char prev, va_list params);
 
 #endif
