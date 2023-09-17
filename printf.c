@@ -6,7 +6,7 @@
  * _printf - produces output according to format
  * @format: character string format
  * Return: the number of characters printed
-*/
+ */
 int _printf(const char *format, ...)
 {
 	int i, acs = 0, count = 0;
@@ -23,17 +23,14 @@ int _printf(const char *format, ...)
 			acs = 1;
 			continue;
 		}
-
 		if (acs == 0)
 		{
 			_putchar(format[i]);
 			count++;
+			continue;
 		}
-		else
-		{
-			count += print_acs(format[i], format[i - 1], params);
-			acs = 0;
-		}
+		count += print_acs(format[i], format[i - 1], params);
+		acs = 0;
 	}
 
 	va_end(params);

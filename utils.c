@@ -19,6 +19,20 @@ int _puts(char *str)
 	return (i);
 }
 
+/**
+ * print_null - print '(null)'
+ * Return: 6 always
+ */
+int print_null(void)
+{
+	_putchar('(');
+	_putchar('n');
+	_putchar('u');
+	_putchar('l');
+	_putchar('l');
+	_putchar(')');
+	return (6);
+}
 
 /**
  * print_acs - prints the value of an
@@ -27,7 +41,7 @@ int _puts(char *str)
  * @prev: the previous char
  * @params: the arguments list
  * Return: the number of chars printed
-*/
+ */
 int print_acs(char format, char prev, va_list params)
 {
 	char cur, *str;
@@ -43,26 +57,13 @@ int print_acs(char format, char prev, va_list params)
 	case 's':
 		str = va_arg(params, char *);
 		if (str == NULL)
-		{
-			_putchar('(');
-			_putchar('n');
-			_putchar('u');
-			_putchar('l');
-			_putchar('l');
-			_putchar(')');
-			count += 6;
-		}
+			count += print_null();
 		else
-		{
 			count += _puts(str);
-		}
 		break;
 	case 'd':
-		cur = va_arg(params, int);
-		count += print_number(cur);
-		break;
 	case 'i':
-		cur = va_arg(params, usi);
+		cur = va_arg(params, int);
 		count += print_number(cur);
 		break;
 	case '%':

@@ -10,26 +10,35 @@
 
 int print_number(int n)
 {
-	int pow;
-	int count;
+    int count = 0, divisor, temp;
 
-	if (n < 0)
-	{
-		_putchar('-');
-		n *= -1;
-	}
+    if (n == 0) {
+        _putchar('0');
+        count++;
+    }
+    else {
+        if (n < 0) {
+            _putchar('-');
+            count++;
+            n = -n;
+        }
 
-	pow = 1000000000;
-	count = 0;
-	while (pow)
-	{
-		if (((n / pow) % 10) || (n / (pow * 10)) % 10)
-		{
-			_putchar(((((n / pow)) % 10) + '0'));
-			count++;
-		}
-		pow /= 10;
-	}
+        divisor = 1;
+        temp = n;
 
-	return (count);
+        while (temp > 9) {
+            divisor *= 10;
+            temp /= 10;
+        }
+
+        while (divisor > 0) {
+            int digit = n / divisor;
+            _putchar('0' + digit);
+            count++;
+            n -= digit * divisor;
+            divisor /= 10;
+        }
+    }
+
+    return count;
 }
