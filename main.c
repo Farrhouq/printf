@@ -35,8 +35,8 @@ int main(void)
 	printf('\0');
 	_printf("Character:[%c]\n", '\t');
 	printf("Character:[%c]\n", '\t');
-	len2 = printf("String:[%s] - %d\n", "NULL%d", 4);
-	len = _printf("String:[%s] - %d\n", "NULL%d", 4);
+	len2 = printf("String:[%s]\n", "NULL%d");
+	len = _printf("String:[%s]\n", "NULL%d");
 	_printf("Address:[%p]\n", addr);
 	printf("Address:[%p]\n", addr);
 	_printf("Percent:[%s]\n", "damn");
@@ -44,8 +44,8 @@ int main(void)
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 
-	_printf("Length:[%d,]\n", -580);
-	 printf("Length:[%d,]\n", -580);
+	_printf("Num: %i\n", 4801);
+	 printf("Num: %i\n", 4801);
 
 
 	return ((0));
