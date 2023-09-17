@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	char *str;
 	int count = 0;
 
+	if (format == NULL)
+		return (-1);
+
 	va_list params;
 	va_start(params, format);
 	for (i = 0; format[i]; i++)
