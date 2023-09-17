@@ -10,35 +10,40 @@
 
 int print_number(int n)
 {
-    int count = 0, divisor, temp;
+	int count = 0, divisor, temp, digit;
 
-    if (n == 0) {
-        _putchar('0');
-        count++;
-    }
-    else {
-        if (n < 0) {
-            _putchar('-');
-            count++;
-            n = -n;
-        }
+	if (n == 0)
+	{
+		_putchar('0');
+		count++;
+	}
+	else
+	{
+		if (n < 0)
+		{
+			_putchar('-');
+			count++;
+			n = -n;
+		}
 
-        divisor = 1;
-        temp = n;
+		divisor = 1;
+		temp = n;
 
-        while (temp > 9) {
-            divisor *= 10;
-            temp /= 10;
-        }
+		while (temp > 9)
+		{
+			divisor *= 10;
+			temp /= 10;
+		}
 
-        while (divisor > 0) {
-            int digit = n / divisor;
-            _putchar('0' + digit);
-            count++;
-            n -= digit * divisor;
-            divisor /= 10;
-        }
-    }
+		while (divisor > 0)
+		{
+			digit = n / divisor;
+			_putchar('0' + digit);
+			count++;
+			n -= digit * divisor;
+			divisor /= 10;
+		}
+	}
 
-    return count;
+	return ((count));
 }

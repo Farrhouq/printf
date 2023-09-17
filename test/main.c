@@ -9,6 +9,8 @@
  */
 int main(void)
 {
+
+
 	int len2;
 	int len;
 	unsigned int ui;
@@ -19,8 +21,8 @@ int main(void)
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 
-	_printf("Length:[%d, %i]\n", 50, len);
-	printf("Length:[%d, %i]\n", 50, len2);
+
+
 	_printf("Negative:[%d]\n", -1);
 	printf("Negative:[%d]\n", -1);
 	_printf("Unsigned:[%u]\n", ui);
@@ -31,16 +33,20 @@ int main(void)
 	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	_printf('\0');
 	printf('\0');
-	_printf("Character:[%c]\n", 'p');
-	printf("Character:[%c]\n", 'p');
-	len2 = printf("String:[%s]\n", NULL);
-	len =  _printf("String:[%s]\n", NULL);
+	_printf("Character:[%c]\n", '\t');
+	printf("Character:[%c]\n", '\t');
+	len2 = printf("String:[%s] - %d\n", "NULL%d", 4);
+	len = _printf("String:[%s] - %d\n", "NULL%d", 4);
 	_printf("Address:[%p]\n", addr);
 	printf("Address:[%p]\n", addr);
 	_printf("Percent:[%s]\n", "damn");
 	 printf("Percent:[%s]\n", "damn");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+
+	_printf("Length:[%d,]\n", -580);
+	 printf("Length:[%d,]\n", -580);
+
 
 	return ((0));
 }
