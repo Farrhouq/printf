@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	va_start(params, format);
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] == '%' && format[i - 1] != '%')
+		if (format[i] == '%' && acs != 1)
 		{
 			acs = 1;
 			continue;
@@ -72,6 +72,6 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(params);
-	
+
 	return (count);
 }
