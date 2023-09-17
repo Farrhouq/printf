@@ -6,6 +6,7 @@
 /**
  * _puts - prints a string to stdout
  * @str: the string to be printed
+ * Return: the number of characters printed
  */
 int _puts(char *str)
 {
@@ -84,7 +85,6 @@ int print_acs(char format, char prev, va_list params)
 /**
  * print_number - prints any integer
  * @n: number to be printed
- * @count: the number of chars
  * Return: the number of chars printed
  */
 int print_number(int n)
