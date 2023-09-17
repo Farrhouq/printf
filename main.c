@@ -31,12 +31,12 @@ int main(void)
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     _printf("Character:[%c]\n", 'H' );
     printf("Character:[%c]\n", 'H');
-   len =  _printf("String:[%s]\n", "I am a string !");
-   len2 = printf("String:[%s]\n", "I am a string !");
+   len2 = printf("String:[%s]\n", NULL);
+   len =  _printf("String:[%s]\n", NULL);
     _printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
-    len = _printf("Percent:[%%%%%%%]\n");
-    len2 = printf("Percent:[%%%%%%%]\n");
+     _printf("Percent:[%%%%%%%]\n");
+     printf("Percent:[%%%%%%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     

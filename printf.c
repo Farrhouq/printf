@@ -43,7 +43,20 @@ int _printf(const char *format, ...)
 
 			case 's':
 				str = va_arg(params, char *);
+				if (str == NULL)
+				{
+					_putchar('(');
+					_putchar('n');
+					_putchar('u');
+					_putchar('l');
+					_putchar('l');
+					_putchar(')');
+					count += 6;
+				}
+				else
+				{
 				count += _puts(str);
+				}
 				break;
 
 			case 'd':
