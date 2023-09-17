@@ -23,12 +23,16 @@ int _puts(char *str)
 /**
  * print_acs - prints the value of an
  * access specifier
+ * @format: the type of specifier
+ * @prev: the previous char
+ * @params: the arguments list
+ * Return: the number of chars printed
 */
 int print_acs(char format, char prev, va_list params)
 {
 	char cur, *str;
 	int count = 0;
-	
+
 	switch (format)
 	{
 	case 'c':
@@ -36,7 +40,6 @@ int print_acs(char format, char prev, va_list params)
 		_putchar(cur);
 		count++;
 		break;
-
 	case 's':
 		str = va_arg(params, char *);
 		if (str == NULL)
@@ -54,22 +57,18 @@ int print_acs(char format, char prev, va_list params)
 			count += _puts(str);
 		}
 		break;
-
 	case 'd':
 		cur = va_arg(params, int);
 		count += print_number(cur);
 		break;
-
 	case 'i':
-		cur = va_arg(params, unsigned);
+		cur = va_arg(params, usi);
 		count += print_number(cur);
 		break;
-
 	case '%':
 		_putchar('%');
 		count++;
 		break;
-
 	default:
 		_putchar(prev);
 		_putchar(format);
