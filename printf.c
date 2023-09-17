@@ -61,6 +61,7 @@ int _printf(const char *format, ...)
 			default:
 				_putchar(format[i - 1]);
 				_putchar(format[i]);
+				count += 2;
 				break;
 			}
 			acs = 0;
