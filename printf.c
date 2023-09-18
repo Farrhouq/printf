@@ -51,6 +51,11 @@ int _printf(const char *format, ...)
 			b = va_arg(params, usi);
 			count += printUnsignedIntToOctal(b);
 		}
+		else if (format[i] == 'x' || format[i] == 'X')
+		{
+			b = va_arg(params, usi);
+			count += print_hexadecimal(b, format[i]);
+		}
 		else
 		{
 			count += print_acs(format[i], format[i - 1], params);

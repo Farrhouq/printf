@@ -55,3 +55,31 @@ int print_unsigned_number(unsigned int n)
 
 	return (count);
 }
+
+
+int print_hexadecimal(unsigned int n, char formatSpecifier)
+{
+    int count = 0, i = 0, j;
+    char hex[32];
+    char *hexChars = (formatSpecifier == 'x') ? "0123456789abcdef" : "0123456789ABCDEF";
+
+    if (n == 0) {
+        _putchar('0');
+        count++;
+        return count;
+    }
+
+
+    while (n > 0) {
+        hex[i] = hexChars[n % 16];
+        n = n / 16;
+        i++;
+    }
+
+    for (j = i - 1; j >= 0; j--) {
+        _putchar(hex[j]);
+        count++;
+    }
+
+    return count;
+}

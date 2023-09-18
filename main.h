@@ -12,7 +12,7 @@ int print_null(void);
 int printDecimalToBinary(int n);
 int printUnsignedIntToOctal(unsigned int n);
 int print_unsigned_number(unsigned int n);
-
+int print_hexadecimal(unsigned int n, char formatSpecifier);
 
 typedef unsigned int usi;
 
