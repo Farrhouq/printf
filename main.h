@@ -9,6 +9,7 @@ int _puts(char *str);
 int print_number(int n);
 int print_acs(char format, char prev, va_list params);
 int print_null(void);
+int printDecimalToBinary(int n);
 
 typedef unsigned int usi;
 

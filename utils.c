@@ -126,3 +126,34 @@ int print_number(int n)
 
 	return (count);
 }
+
+
+int printDecimalToBinary(int n)
+{
+	int count = 0;
+	int i = 0, j;
+	int binary[32];
+
+	if (n == 0)
+	{
+		_putchar('0');
+		count++;
+		return (count);
+	}
+
+
+	while (n > 0)
+	{
+		binary[i] = n % 2;
+		n = n / 2;
+		i++;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(binary[j] + '0');
+		count++;
+	}
+
+	return (count);
+}

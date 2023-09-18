@@ -10,6 +10,7 @@
 int _printf(const char *format, ...)
 {
 	int i, acs = 0, count = 0, cur;
+	unsigned int b;
 	va_list params;
 
 	if (format == NULL)
@@ -33,6 +34,11 @@ int _printf(const char *format, ...)
 		{
 			cur = va_arg(params, int);
 			count += print_number(cur);
+		}
+		else if (format[i] == 'b')
+		{
+			b = va_arg(params, usi);
+			count += printDecimalToBinary(b);
 		}
 		else
 		{

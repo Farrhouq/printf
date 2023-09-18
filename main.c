@@ -41,12 +41,11 @@ int main(void)
 	printf("Address:[%p]\n", addr);
 	_printf("Percent:[%s]\n", "damn");
 	 printf("Percent:[%s]\n", "damn");
-	_printf("Len:[%d]\n", len);
-	printf("Len:[%d]\n", len2);
 
-	_printf("Num: %i\n", 4801);
-	 printf("Num: %i\n", 4801);
+	len = _printf("bin: %b \n", '6');
 
+	_printf("Len:[%i]\n", len);
+	printf("Len:[%i]\n", len2);
 
-	return ((0));
+	return (0);
 }
