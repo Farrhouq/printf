@@ -44,10 +44,12 @@ int _printf(const char *format, ...)
 		else if (format[i] == 'u')
 		{
 			b = va_arg(params, usi);
-			if (b > INT_MAX)
-				count += print_number(-b);
-			else
-				count += print_number(b);
+			count += print_unsigned_number(b);
+		}
+		else if (format[i] == 'o')
+		{
+			b = va_arg(params, usi);
+			count += printUnsignedIntToOctal(b);
 		}
 		else
 		{

@@ -10,6 +10,9 @@ int print_number(int n);
 int print_acs(char format, char prev, va_list params);
 int print_null(void);
 int printDecimalToBinary(int n);
+int printUnsignedIntToOctal(unsigned int n);
+int print_unsigned_number(unsigned int n);
+
 
 typedef unsigned int usi;
 
