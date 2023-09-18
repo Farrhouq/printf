@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
  * _printf - produces output according to format
@@ -39,6 +40,14 @@ int _printf(const char *format, ...)
 		{
 			b = va_arg(params, usi);
 			count += printDecimalToBinary(b);
+		}
+		else if (format[i] == 'u')
+		{
+			b = va_arg(params, usi);
+			if (b > INT_MAX)
+				count += print_number(-b);
+			else
+				count += print_number(b);
 		}
 		else
 		{
