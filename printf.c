@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 		else if (format[i] == 'x' || format[i] == 'X')
 		{
 			b = va_arg(params, usi);
-			count += print_hexadecimal(b, format[i]);
+			count += print_hexadecimal(b, format[i], 0);
 		}
 		else
 		{

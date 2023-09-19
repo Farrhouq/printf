@@ -68,6 +68,18 @@ int print_acs(char format, char prev, va_list params)
 		cur = va_arg(params, int);
 		count += print_number(cur);
 		break;
+	case 'S':
+		str = va_arg(params, char *);
+		count += print_str(str);
+		break;
+	case 'r':
+		str = va_arg(params, char *);
+		count += print_rev(str);
+		break;
+	case 'R':
+		str = va_arg(params, char *);
+		count += rot13(str);
+		break;
 	case '%':
 		_putchar('%');
 		count++;
