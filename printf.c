@@ -36,25 +36,11 @@ int _printf(const char *format, ...)
 			cur = va_arg(params, int);
 			count += print_number(cur);
 		}
-		else if (format[i] == 'b')
+		else if (format[i] == 'b' || format[i] == 'u' || format[i] == 'o'
+			|| format[i] == 'x' || format[i] == 'X')
 		{
 			b = va_arg(params, usi);
-			count += printDecimalToBinary(b);
-		}
-		else if (format[i] == 'u')
-		{
-			b = va_arg(params, usi);
-			count += print_unsigned_number(b);
-		}
-		else if (format[i] == 'o')
-		{
-			b = va_arg(params, usi);
-			count += printUnsignedIntToOctal(b);
-		}
-		else if (format[i] == 'x' || format[i] == 'X')
-		{
-			b = va_arg(params, usi);
-			count += print_hexadecimal(b, format[i], 0);
+			count += print_boux(b, format[i]);
 		}
 		else
 		{
@@ -62,8 +48,6 @@ int _printf(const char *format, ...)
 		}
 		acs = 0;
 	}
-
 	va_end(params);
-
 	return (count);
 }

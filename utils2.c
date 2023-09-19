@@ -88,3 +88,28 @@ int print_hexadecimal(unsigned int n, char formatSpecifier, int pad)
 	}
 	return (count);
 }
+
+int print_boux(unsigned int n, char format)
+{
+	int count = 0;
+
+	switch (format)
+	{
+	case 'b':
+		count += printDecimalToBinary(n);
+		break;
+	case 'u':
+		count += print_unsigned_number(n);
+		break;
+	case 'o':
+		count += printUnsignedIntToOctal(n);
+		break;
+	case 'x':
+	case 'X':
+		count += print_hexadecimal(n, format, 0);
+		break;
+	default:
+		break;
+	}
+	return (count);
+}

@@ -17,6 +17,7 @@ int print_hexadecimal(unsigned int n, char formatSpecifier, int pad);
 int print_str(char *str);
 int print_rev(char *s);
 int rot13(char *s);
+int print_boux(unsigned int n, char format);
 
 typedef unsigned int usi;
 

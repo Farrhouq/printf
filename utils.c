@@ -54,8 +54,7 @@ int print_acs(char format, char prev, va_list params)
 	case 'c':
 		cur = va_arg(params, int);
 		_putchar(cur);
-		count++;
-		break;
+		return (1);
 	case 's':
 		str = va_arg(params, char *);
 		if (str == NULL)
@@ -66,29 +65,23 @@ int print_acs(char format, char prev, va_list params)
 	case 'd':
 	case 'i':
 		cur = va_arg(params, int);
-		count += print_number(cur);
-		break;
+		return (print_number(cur));
 	case 'S':
 		str = va_arg(params, char *);
-		count += print_str(str);
-		break;
+		return (print_str(str));
 	case 'r':
 		str = va_arg(params, char *);
-		count += print_rev(str);
-		break;
+		return (print_rev(str));
 	case 'R':
 		str = va_arg(params, char *);
-		count += rot13(str);
-		break;
+		return (rot13(str));
 	case '%':
 		_putchar('%');
-		count++;
-		break;
+		return (1);
 	default:
 		_putchar(prev);
 		_putchar(format);
-		count += 2;
-		break;
+		return (2);
 	}
 	return (count);
 }
