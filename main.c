@@ -36,7 +36,7 @@ int main(void)
 	_printf("Character:[%c]\n", '\t');
 	printf("Character:[%c]\n", '\t');
 	len2 = printf("String:[%s]\n", "NULL");
-	len = _printf("String:[%R]\n", "NULL");
+	len = _printf("String:[%R]\n", NULL);
 	_printf("Address:[%p]\n", addr);
 	printf("Address:[%p]\n", addr);
 	_printf("Percent:[%s]\n", "damn");
