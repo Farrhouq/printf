@@ -33,10 +33,10 @@ int main(void)
 	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	_printf('\0');
 	printf('\0');
-	_printf("Character:[%c]\n", '\t');
-	printf("Character:[%c]\n", '\t');
-	len2 = printf("String:[%s]\n", "NULL");
-	len = _printf("String:[%R]\n", NULL);
+	_printf("Character:[%c]\n", 'd');
+	printf("Character:[%c]\n", 'd');
+	len2 = printf("String:[%s]\n", '5');
+	len = _printf("String:[%s]\n", '5');
 	_printf("Address:[%p]\n", addr);
 	printf("Address:[%p]\n", addr);
 	_printf("Percent:[%s]\n", "damn");

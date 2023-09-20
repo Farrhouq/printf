@@ -68,6 +68,10 @@ int print_acs(char format, char prev, va_list params)
 		return (print_number(cur));
 	case 'S':
 		str = va_arg(params, char *);
+		if (str == NULL)
+		{
+			return (0);
+		}
 		return (print_str(str));
 	case 'r':
 		str = va_arg(params, char *);
