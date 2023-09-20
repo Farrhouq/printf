@@ -50,8 +50,7 @@ int print_acs(char format, char prev, va_list params)
 	int count = 0;
 
 	switch (format)
-	{
-	case 'c':
+	{case 'c':
 		cur = va_arg(params, int);
 		_putchar(cur);
 		return (1);
@@ -69,9 +68,7 @@ int print_acs(char format, char prev, va_list params)
 	case 'S':
 		str = va_arg(params, char *);
 		if (str == NULL)
-		{
 			return (0);
-		}
 		return (print_str(str));
 	case 'r':
 		str = va_arg(params, char *);
@@ -86,83 +83,4 @@ int print_acs(char format, char prev, va_list params)
 		_putchar(prev);
 		_putchar(format);
 		return (2);
-	}
-	return (count);
-}
-
-
-/**
- * print_number - prints any integer
- * @n: number to be printed
- * Return: the number of chars printed
- */
-int print_number(int n)
-{
-	int count = 0, divisor, temp, digit;
-
-	if (n == 0)
-	{
-		_putchar('0');
-		count++;
-	}
-	else
-	{
-		if (n < 0)
-		{
-			_putchar('-');
-			count++;
-			n = -n;
-		}
-
-		divisor = 1;
-		temp = n;
-
-		while (temp > 9)
-		{
-			divisor *= 10;
-			temp /= 10;
-		}
-
-		while (divisor > 0)
-		{
-			digit = n / divisor;
-			_putchar('0' + digit);
-			count++;
-			n -= digit * divisor;
-			divisor /= 10;
-		}
-	}
-
-	return (count);
-}
-
-
-int printDecimalToBinary(int n)
-{
-	int count = 0;
-	int i = 0, j;
-	int binary[32];
-
-	if (n == 0)
-	{
-		_putchar('0');
-		count++;
-		return (count);
-	}
-
-
-	while (n > 0)
-	{
-		binary[i] = n % 2;
-		n = n / 2;
-		i++;
-	}
-
-	for (j = i - 1; j >= 0; j--)
-	{
-		_putchar(binary[j] + '0');
-		count++;
-	}
-
-	return (count);
-}
+} return (count); }

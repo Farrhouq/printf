@@ -29,6 +29,11 @@ int printUnsignedIntToOctal(unsigned int n)
 	return ((count));
 }
 
+/**
+ * print_unsigned_number - prints an unsigned number
+ * @n: the unsigned number
+ * Return: the number of characters printed
+*/
 int print_unsigned_number(unsigned int n)
 {
 	int pow;
@@ -55,17 +60,25 @@ int print_unsigned_number(unsigned int n)
 	return (count);
 }
 
+/**
+ * print_hexadecimal - prints a number in hex
+ * @n: the number
+ * @formatSpecifier: 'x' or 'X'
+ * @pad: whether or not to prefix 0 on single digits
+ * Return: the number of characters printed
+*/
 int print_hexadecimal(unsigned int n, char formatSpecifier, int pad)
 {
 	int count = 0, i = 0, j;
 	char hex[32];
-	char *hexChars = (formatSpecifier == 'x') ? "0123456789abcdef" : "0123456789ABCDEF";
+	char *hexChars = (formatSpecifier == 'x') ?
+		"0123456789abcdef" : "0123456789ABCDEF";
 
 	if (n == 0)
 	{
 		_putchar('0');
 		count++;
-		return count;
+		return (count);
 	}
 
 	while (n > 0)
@@ -89,6 +102,12 @@ int print_hexadecimal(unsigned int n, char formatSpecifier, int pad)
 	return (count);
 }
 
+/**
+ * print_boux - prints unsigned ints in format
+ * @n: the unsigned int
+ * @format: the format
+ * Return: the number of characters printed
+*/
 int print_boux(unsigned int n, char format)
 {
 	int count = 0;

@@ -58,8 +58,10 @@ int rot13(char *s)
 	char t[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int m[] = {97, 65};
 
-    if (s == NULL)
-       return (print_null());
+	if (s == NULL)
+	{
+		return (print_null());
+	}
 
 	i = 0;
 	while (s[i])
