@@ -44,7 +44,7 @@ int print_rev(char *s)
 		_putchar(s[i]);
 		count++;
 	}
-	return ((count));
+	return (count);
 }
 
 /**
@@ -57,11 +57,6 @@ int rot13(char *s)
 	int i, mag, j;
 	char t[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int m[] = {97, 65};
-
-	if (s == NULL)
-	{
-		return (print_null());
-	}
 
 	i = 0;
 	while (s[i])

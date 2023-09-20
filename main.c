@@ -42,7 +42,7 @@ int main(void)
 	_printf("Len:[%i]\n", len);
 
 	len2 = printf("num:[%d]\n", 455);
-	len = _printf("num:[%d]\n", 455);
+	len = _printf("bin:[%R]\n", NULL);
 	printf("Len:[%i]\n", len);
 	printf("Len:[%i]\n", len2);
 
